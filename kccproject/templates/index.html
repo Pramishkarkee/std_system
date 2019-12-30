@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+    <head>
+        <title>
+            Kantipur City College 
+        </title>
+        <link rel="stylesheet" href={% static "index.css" %}>
+    </head>
+    <body>
+        welcome to kantipur city college<br>
+        <form action="adminpannel" method="POST">
+            {% csrf_token %}
+            username:<input type="text" name="username"><br>
+            password:<input type="text" name="password">
+            <br>
+            <button type="submit" class="signupbtn">Sign Up</button>
+
+        </form>
+    </body>
+</html>
