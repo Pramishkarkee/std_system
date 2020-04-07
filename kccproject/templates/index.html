@@ -1,21 +1,59 @@
 <!DOCTYPE html>
-{%load static%}
+
 <html>
     <head>
         <title>
-            Kantipur City College 
+            Kantipur City College
         </title>
-        <link rel="stylesheet" href={% static "index.css" %}>
+        {%load static%}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="{% static "index.css" %}" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <style>
+            body{
+                /* background-image: linear-gradient(120deg,#3498db); */
+                background:linear-gradient(-90deg,#EE7752,#E73C7E,#23A6D5,#23D5AB);
+              } 
+        </style>
     </head>
     <body>
-        welcome to kantipur city college<br>
-        <form action="adminpannel" method="POST">
+        <h2 align="center" style="color: white;">Kantipur City College </h2>
+        <br>
+        <h3 align="center" style="color: white;"> Student login </h3>
+        <div align="right">
+        <a href="adminLogin">
+            <button type="button" class="btn btn-primary" style="margin-right:20px" >Admin Login</button>
+        </a>
+       </div>
+        
+        <hr>
+    <br>
+    <h1>{{ name }}</h1>
+        {% if wrong_ip %}
+        <script>alert("{{wrong_ip}}")</script>
+        {% endif %}
+        <div class="login">
+        <form action="adminpannel" method="POST"  style="max-width:500px;margin:auto">
             {% csrf_token %}
-            username:<input type="text" name="username"><br>
-            password:<input type="text" name="password">
-            <br>
-            <button type="submit" class="signupbtn">Sign Up</button>
+            <div class="rounded">
+                <img src="{% static "image/logo.jpg" %}" alt="My image" width="150px" height="150px"  align="center" style="margin-left:70px ; margin-bottom:10px">
+            </div>
+            
+            <div class="input-container">
+                <i class="fa fa-user icon"></i>
+                <input class="input-field" type="text" placeholder="Username" name="usrnm">
+            </div>
 
+            <div class="input-container">
+                <i class="fa fa-key icon"></i>
+                <input class="input-field" type="password" placeholder="Password" name="psw">
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="buttonid">Login</button>
         </form>
+        </div>
     </body>
 </html>

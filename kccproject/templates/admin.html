@@ -1,2 +1,43 @@
-{{username}}
-{{password}}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <title>Kantipur city college moniter</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    </head>
+
+    <body>
+        
+            <img src={% static "image/logo.jpeg" %} alt="Italian Trulli" style="width:500px;height:100px;">
+            <a href="register"><button class="btn btn-outline-secondary" type="button">Register</button></a>
+                <form action="student_details" method="POST">
+                        {% csrf_token %} 
+                    <div class="container">
+                        <div class="row justify-content-md-center">
+                            <div class="col-6" style="margin-top:200px ;">
+                                <div class="input-group">
+                                    <select class="custom-select" >
+                                        <option selected>Select Programs</option>
+                                        <option value="1" name="computer">BE Computer</option>
+                                        <option value="2" name="civil">BE Civil</option>
+                                        <option value="3" name="bit">Bachelor of Information Technology(BIT)</option>
+                                        <option value="4" name="bca">Bachelor of Computer Applications(BCA)</option>
+                                        <option value="5" name="bba">Bachelor of Business Administration(BBA)</option>
+                                        <option value="6" name="mca">Master of Computer Application(MCA)</option>
+                                        <option value="7" name="pgdca">Post Graduation Diploma in Computer Application(PGDCA)</option>
+                                        <option value="8" name="mamcj">Masters of Arts in Mass Communication & Journalism(MAMCJ)</option>
+                                    </select>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="submit">Button</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                
+                
+
+    </body>
+</html>

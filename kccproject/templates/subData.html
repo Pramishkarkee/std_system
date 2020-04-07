@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <title>Kantipur city college moniter</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    </head>
+
+    <body>
+        
+            <img src={% static "image/logo.jpeg" %} alt="Italian Trulli" style="width:500px;height:100px;">
+            <div class="container">
+                <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th scope="col">Subject Id</th>
+                        <th scope="col">Subject Name</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">{{semSub.subjectcode1}}</th>
+                        <td>{{semSub.subject1}}</td>  
+                      </tr>
+                      <tr>
+                        <th scope="row">{{semSub.subjectcode2}}</th>
+                        <td>{{semSub.subject1}}</td>  
+                      </tr>
+                      <tr>
+                        <th scope="row">{{semSub.subjectcode3}}</th>
+                        <td>{{semSub.subject1}}</td>  
+                      </tr>
+                      <tr>
+                        <th scope="row">{{semSub.subjectcode4}}</th>
+                        <td>{{semSub.subject1}}</td>  
+                      </tr>
+                      <tr>
+                        <th scope="row">{{semSub.subjectcode5}}</th>
+                        <td>{{semSub.subject1}}</td>  
+                      </tr>
+                      <tr>
+                        <th scope="row">{{semSub.subjectcode6}}</th>
+                        <td>{{semSub.subject1}}</td>  
+                      </tr>
+                      <tr>
+                        <th scope="row">{{semSub.subjectcode7}}</th>
+                        <td>{{semSub.subject1}}</td>  
+                      </tr>
+                      
+                      
+                    </tbody>
+                  </table>
+                
+            </div>
+                
+
+    </body>
+</html>
+
+
+
+

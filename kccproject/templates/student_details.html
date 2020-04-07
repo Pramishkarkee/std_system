@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{%load static%}
+{% load staticfiles %}
+
+
+<html>
+    <head>
+        <title>
+            Kantipur City College 
+        </title>
+        <img src={% static "image/logo.jpeg" %}  width=500px height=100px >
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+     <br>
+      <div class="container">
+      <img src="{{MEDIA_URL}}{{stddata.studentPicture}}"  class="profil"style="width:220px;height:200px; margin:2%">
+      <table class="student float-right" style="margin-top: 4%; margin-right:23%">
+        <tr>
+          <th style="background-color: cornflowerblue;">Student Information</th>
+          
+        </tr>
+        
+        <tr>
+          <th>Student Id </th>
+          <td>{{ stddata.studentid}}</td>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <td>{{stddata.firstName}} {{stddata.lastName}}</td>
+        </tr>
+        <tr>
+          <th>Address</th>
+          <td>{{stddata.District}},{{stddata.village}}</td>
+        </tr>
+        <tr>
+          <th>Email Address</th>
+          <td>{{stddata.emailAdd}}</td>
+        </tr>
+        <tr>
+          <th>Date of Birth</th>
+          <td>{{stddata.BirthDate}}</td>
+        </tr>
+        <tr>
+          <th>Contact Number</th>
+          <td>{{stddata.ContactNo}}</td>
+        </tr>
+  
+        
+        </td>
+      </table>
+      <table class="parents float-left" style="margin-top: 4%; margin-right:60px">
+        <tr>
+          <th style="background-color: cornflowerblue;">Student Parents Information</th>
+          
+        </tr>
+        
+        <tr>
+          <th>Father Name </th>
+          <td>{{ stddata.fatherName}} {{stddata.lastName}}</td>
+        </tr>
+        <tr>
+          <th>Father Occupation</th>
+          <td>{{stddata.fatherOccupation}} </td>
+        </tr>
+        <tr>
+          <th>Mother Name</th>
+          <td>{{stddata.motherName}} {{stddata.lastName}}</td>
+        </tr>
+        <tr>
+          <th>Mother Occupation</th>
+          <td>{{stddata.motherOccupation}} </td>
+        </tr>
+        <tr>
+          <th>Parent Email</th>
+          <td>{{stddata.parentEmail}} </td>
+        </tr>
+        <tr>
+          <th>Parent Contact Number</th>
+          <td>{{stddata.parentContactNo}} </td>
+        </tr>
+        
+      </table>
+      <table class="college float-right" style="margin-top: 4%; margin-right:20%">
+        <tr>
+          <th style="background-color: cornflowerblue;">Student Parents Information</th>
+          
+        </tr>
+        
+        <tr>
+          <th>Faculty </th>
+          <td>{{ stddata.cName}}</td>
+        </tr>
+        <tr>
+          <th>Semister</th>
+          <td>{{stddata.Semister}} </td>
+        </tr>
+       
+      </table>
+    </div>
+     
+    </body>
+
+</html>

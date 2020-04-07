@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <title>Kantipur city college moniter</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    </head>
+
+    <body>
+        
+        <img src={% static "image/logo.jpeg" %} alt="Italian Trulli" class="logo float-right" style="width:500px;height:100px;">
+        <div class="container col-10">
+            <table class="table">
+                <form action="subjects" method="POST">
+                    {% csrf_token %} 
+                    <tr>
+                        <th scope="col">
+                            <select class="custom-select col-sm-8" name="faculty">
+                                <option selected><--Select Faculty--></option>
+                               
+                             </select>
+                        </th>
+                        <th scope="col">
+                            <select class="custom-select col-sm-8" name="semister">
+                                <option selected><--Select Semister--></option>
+                                <option value="1">First</option>
+                                <option value="2">Secound</option>
+                                <option value="3">Third</option>
+                                <option value="4">Fourth</option>
+                                <option value="5">Fifth</option>
+                                <option value="6">Sixth</option>
+                                <option value="7">Seventh</option>
+                                <option value="8">Eighth</option>
+                            </select>
+                        </th>
+                    
+                        <th scope="col"><button type="submit" class="btn btn-primary">Add Subject</button></th>
+                    </tr>
+                </form>
+            </table>
+        </div>
+
+    </body>
+</html>

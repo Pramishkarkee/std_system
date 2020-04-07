@@ -1,0 +1,59 @@
+* {box-sizing: border-box;}
+
+/* Style the input container */
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Style the form icons */
+.icon {
+  padding: 10px;
+  background: gray; 
+  color: black;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Style the input fields */
+.input-field {
+  width: 300px;
+  padding: 5px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+/* Set a style for the submit button */
+#buttonid {
+  background-color: dodgerblue;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+  width: 345px;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+.login{
+  border-radius: 15px;
+  margin-left:450px;
+  margin-right:450px;
+  padding: 20px;
+  padding-bottom: 100px;
+  background-color:white;
+}
+
+.rounded{
+  width: 300px;
+  margin:auto
+}
+.rounded img {
+border-radius:50%;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <title>Kantipur city college moniter</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    </head>
+
+    <body>
+        
+            <img src={% static "image/logo.jpeg" %} alt="Italian Trulli" style="width:500px;height:100px;">
+                <div class="container">
+                    <table class="table">
+                        <form action="subjects" method="POST">
+                            {% csrf_token %} 
+                        <tr>
+                            <th scope="col">
+                                <select class="custom-select col-sm-8" name="faculty">
+                                    <option selected><--Select Faculty--></option>
+                                    {% for dat in faculty %}
+                                    <option value="{{dat.courseCode}}">{{dat.courseCode}}</option>
+                                    {% endfor %}
+                                  </select>
+                            </th>
+                            <th scope="col">
+                                <select class="custom-select col-sm-8" name="semister">
+                                    <option selected><--Select Semister--></option>
+                                    <option value="1">First</option>
+                                    <option value="2">Secound</option>
+                                    <option value="3">Third</option>
+                                    <option value="4">Fourth</option>
+                                    <option value="5">Fifth</option>
+                                    <option value="6">Sixth</option>
+                                    <option value="7">Seventh</option>
+                                    <option value="8">Eighth</option>
+                                  </select>
+                            </th>
+                            
+                            <th scope="col"><button type="submit" class="btn btn-primary">Add Subject</button></th>
+                        </tr>
+                    </form>
+                    </table>
+                    
+                       {%if subj%}
+                      
+                       <table class="table">
+                        <form action="addSubject" method="POST">
+                            {% csrf_token %} 
+                            <input type="hidden" id="custId" name="faculty" value="{{fac}}">
+                            <input type="hidden" id="custId" name="semister" value="{{sem}}">
+                            <tr>
+                                <th>Code</th>
+                                <th>Subject</th>
+                            </tr>
+                       <tr>
+                            
+                        <td><input type="text" class="form-control col-sm-6" name="subjectcode1" ></td>
+                        
+                        <td><input type="text" class="form-control col-sm-6" name="subject1"></td>
+                        </tr>
+                        <tr>
+                        
+                            <td><input type="text" class="form-control col-sm-6" name="subjectcode2" ></td>
+                            
+                            <td><input type="text" class="form-control col-sm-6" name="subject2"></td>
+                        </tr>
+                        <tr>
+                        
+                            <td><input type="text" class="form-control col-sm-6" name="subjectcode3" ></td>
+                                
+                            <td><input type="text" class="form-control col-sm-6" name="subject3"></td>
+                        </tr>
+                        <tr>
+                        
+                            <td><input type="text" class="form-control col-sm-6" name="subjectcode4" ></td>
+                                    
+                            <td><input type="text" class="form-control col-sm-6" name="subject4"></td>
+                        </tr>
+                        <tr>
+                        
+                            <td><input type="text" class="form-control col-sm-6" name="subjectcode5" ></td>
+                                        
+                            <td><input type="text" class="form-control col-sm-6" name="subject5"></td>
+                        </tr>
+                        <tr>
+                        
+                            <td><input type="text" class="form-control col-sm-6" name="subjectcode6" ></td>
+                                            
+                            <td><input type="text" class="form-control col-sm-6" name="subject6"></td>
+                        </tr>
+                        <tr>
+                        
+                            <td><input type="text" class="form-control col-sm-6" name="subjectcode7" ></td>
+                                                
+                            <td><input type="text" class="form-control col-sm-6" name="subject7"></td>
+                        </tr>
+                        
+                        <tr>
+                            <th></th>
+                            <th><button type="submit" class="btn btn-primary">submit</button></th>
+                        </tr>
+                       {% endif %}
+                        </form>
+                    </table>
+                    <table class="table">
+                        <tr>
+                            <th>ID</th>
+                            <th>Subject</th>
+                            <th>Semister</th>
+                            <th>Process</th>
+                        </tr>
+                        
+                            {% for dat in faculty %}
+                            <form action="subData" method="POST">
+                                {% csrf_token %}
+                            <tr>
+                                <td>{{dat.courseCode}}</td>
+                                <td>{{dat.courseName}}</td>
+                                <input type="hidden" id="custId" name="codeCourse" value="{{dat.courseCode}}">
+
+                                <td>
+                                    <select class="custom-select col-sm-8" name="semister">
+                                        <option selected><--Select Semister--></option>
+                                        <option value="1">First</option>
+                                        <option value="2">Secound</option>
+                                        <option value="3">Third</option>
+                                        <option value="4">Fourth</option>
+                                        <option value="5">Fifth</option>
+                                        <option value="6">Sixth</option>
+                                        <option value="7">Seventh</option>
+                                        <option value="8">Eighth</option>
+                                      </select>
+                                </td>
+                                <td><button type="submit" class="btn btn-primary">View</button></td>
+                            
+                            </tr>
+                             </form>
+                            {% endfor %}
+                        
+
+                    </table>
+                </div>
+                
+                
+
+    </body>
+</html>
